@@ -9,20 +9,26 @@
 </head>
 
 <body>
-    <div class="dashboard">
-        <div class="header">
-            <h1>DASHBOARD</h1>
-            <h2>Config Status:</h2>
-            <p id="serverStatus">Loading...</p>
-        </div>
-        <div class="channels">
-            <h2>Channels:</h2>
-            <ul id="channelList">
-                <!-- Channels will be dynamically added here -->
-            </ul>
-        </div>
+<div class="dashboard">
+    <div class="channels">
+        <h2>Channels:</h2>
+        <ul id="channelList">
+        </ul>
     </div>
-    <script src="script.js"></script>
-</body>
+</div>
 
-</html>
+<script>
+  const channelData = [
+    { name: 'SP+: ', status: 'Working' },
+    { name: 'Acronisware:  ', status: 'Working' },
+    { name: 'Mainstream Vape: ', status: 'Working' },
+  ];
+  const channelList = document.getElementById('channelList');
+
+  // Loop through the channelData array and create list items
+  channelData.forEach(channel => {
+    const li = document.createElement('li');
+    li.textContent = `${channel.name}: ${channel.status}`;
+    channelList.appendChild(li);
+  });
+</script>
